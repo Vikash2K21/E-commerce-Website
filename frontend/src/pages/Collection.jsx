@@ -16,7 +16,7 @@ const Collection = () => {
 
   const toggleCategory = (e) => {
     if(category.includes(e.target.value)){
-      setCategory(pre=>pre.filter(item =>item !==e.target.value))
+      setCategory(prev=>prev.filter(item =>item !==e.target.value))
     }
     else{
       setCategory(prev =>[...prev,e.target.value])
@@ -25,7 +25,7 @@ const Collection = () => {
 
   const toggleSubCategory = (e) => {
     if(category.includes(e.target.value)){
-      setSubCategory(pre=>pre.filter(item =>item !==e.target.value))
+      setSubCategory(prev=>prev.filter(item =>item !== e.target.value))
     }
     else{
       setSubCategory(prev =>[...prev,e.target.value])
@@ -59,9 +59,7 @@ const sortProduct = () => {
       setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
       break;
 
-    case 'low-high':
-      setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
-      break;
+    
 
     case 'high-low':
          setFilterProducts(fpCopy.sort((a,b)=>(b.price - a.price)));
